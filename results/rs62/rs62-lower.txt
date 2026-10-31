@@ -1,0 +1,16 @@
+# RS62 (3.1) pi(x) > f(x) on [59,1e9]; slack(q)=pi(q)-f(q'), last interval f(1e9). Implementation 1 (comp-rs62)
+# method: segmented Eratosthenes; EVERY interval [q,q') evaluated with Arb 128-bit balls (rs62lower.c), lower endpoint of pi(q)-f(q') must be >0;
+# min slack = block minimum of that lower endpoint, rounded down to 6 places
+# date 2026-10-31 host PC2 cmd: search/rs62/run.sh
+# base-commit 81ad7d7 wall 37s
+# columns: block_lo block_hi min_slack argmin_q nextprime
+59 100 0.170566 61 67
+100 1000 1.076985 113 127
+1000 10000 12.051857 1009 1013
+10000 100000 82.139136 10039 10061
+100000 1000000 524.880187 100237 100267
+1000000 10000000 3493.861600 1000099 1000117
+10000000 100000000 24903.718139 10000609 10000643
+100000000 1000000000 185418.872767 100000193 100000213
+INTERVALS 50847518
+PASS
